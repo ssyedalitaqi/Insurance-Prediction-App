@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Insurace Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+</head>
+
+<body>
+    <form action="/predict" method="post">
+        <div class="result">
+            <h2>{{prediction}}</h2>
+        </div>
+        <div class="h">
+            <h1>Insuranse Regressor</h1>
+        </div>
+        <div class="box">
+
+            <div class="x">
+                <div class="y">
+                    <label for="">Age</label><br>
+                    <input type="text" placeholder="Enter your age" name="age" required="required">
+                </div>
+                <div class="y">
+                    <label for="">BMI</label><br>
+                    <input type="text" placeholder="Enter bmi" name="bmi" required="required">
+                    <span class="span">Expected value is from 15 to 53</span>
+                </div>
+            </div>
+            <div class="x">
+                <div class="y">
+                    <label for="">Children</label><br>
+                    <select name="children" required="required">
+                        <option selected disabled>Select </option>
+                        {% for i in range(0,21)%}
+                        <option>{{i}}</option>
+                        {%endfor%}
+                    </select>
+                </div>
+                <div class="y">
+                    <label for="">Gender</label><br>
+                    <select name="sex" id="" required="required">
+                        <option selected disabled>Select </option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="x">
+                <div class="y">
+                    <label for="">Smoker</label><br>
+                    <select name="smoker" id="" required="required">
+                        <option selected disabled>Select</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="y">
+                    <label for="">Region</label><br>
+                    <select name="region" required="required id="">
+                        <option  selected disabled>Select </option>
+                        <option >North East</option>
+                        <option >North West</option>
+                        <option >South East</option>
+                        <option >South West</option>
+                    </select>
+                </div>
+            </div>
+            <div class=" button">
+                        <input type="submit" value="Predict" class="btn">
+                </div>
+            </div>
+    </form>
+    <span class="span">Creator: Syed Ali Taqi</span>
+</body>
+
+</html>
